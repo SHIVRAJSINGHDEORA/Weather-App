@@ -1,0 +1,12 @@
+.app {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.wind-map {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}

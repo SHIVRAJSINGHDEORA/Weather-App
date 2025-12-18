@@ -1,0 +1,175 @@
+.Utilits {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10;
+  width: 250px;
+  background: #051351a0;
+  height: 500px;
+  border-radius: 28px;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+.humidity {
+  background-color: #d9dffb;
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.humidity-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+}
+
+.humidity-title {
+  font-weight: 600;
+  font-size: larger;
+}
+
+.humidity-icon {
+  font-size: 50px;
+  width: 100%;
+}
+/* #605ba5 */
+.pressure {
+  background-color: #d9dffb;
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pressure-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+}
+
+.pressure-title {
+  font-weight: 600;
+  font-size: larger;
+}
+
+.pressure-icon {
+  font-size: 50px;
+  width: 100%;
+}
+
+.sun {
+  background-color: #d9dffb;
+  height: 100px;
+  border-radius: 0 0 28px 28px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.visibility {
+  background-color: #d9dffb;
+  height: 100px;
+  border-radius: 28px 28px 0 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-visibility {
+  line-height: 33px;
+  width: 100px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.Icon-part4 {
+  width: 100px;
+  height: 10px;
+  background-color: green;
+  border-radius: 20px;
+}
+
+.Icon-part3 {
+  width: 80px;
+  height: 7.5px;
+  background-color: green;
+  border-radius: 20px;
+}
+
+.Icon-part2 {
+  width: 60px;
+  height: 5px;
+  background-color: green;
+  border-radius: 20px;
+}
+
+.Icon-part1 {
+  width: 40px;
+  height: 2.5px;
+  background-color: green;
+  border-radius: 20px;
+}
+
+.wind {
+  width: 250px;
+  height: 242.5px;
+  background: #d9dffb;
+  border-radius: 28px 28px 28px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  width: 250px;
+  height: 242.5px;
+  background: #d9dffb;
+  border-radius: 28px 28px 28px 28px;
+}
+
+.visibility-title {
+  color: #36454f;
+  position: relative;
+  right: 10px;
+}
+
+.visibility-value {
+  font-size: 40px;
+}
+
+.visibility-unit {
+  color: #36454f;
+}
+
+.humidity-icon-fa {
+  color: #4db2ff;
+}
+
+.pressure-icon-fa {
+  color: #00147a;
+}
+
+.sunrise-icon {
+  color: orange;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.sunset-icon {
+  font-size: 50px;
+  color: darkblue;
+  margin-bottom: 5px;
+}
