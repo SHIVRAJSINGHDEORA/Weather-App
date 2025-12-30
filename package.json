@@ -1,4 +1,7 @@
 {
+  "engines" : {
+    "node" : "22.21.1"
+  },
   "name": "mui",
   "private": true,
   "version": "0.0.0",
