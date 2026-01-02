@@ -138,6 +138,7 @@
   height: 242.5px;
   background: #d9dffb;
   border-radius: 28px 28px 28px 28px;
+  overflow: hidden;
 }
 
 .visibility-title {

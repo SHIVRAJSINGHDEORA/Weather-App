@@ -1,9 +1,10 @@
-import Map from "./Map/Map";
 import Utilits from "./Utilities/Utilits";
 import Weather from "./Weather/Weather";
 import "./WeatherApp.css";
 import Wind from "./Wind/Wind";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
+
+const Map = lazy(() => import("./Map/Map"));
 export default function WeatherApp() {
   const API_KEY = import.meta.env.VITE_API_KEY;
   const API_URL = import.meta.env.VITE_API_URL;
@@ -57,7 +58,9 @@ export default function WeatherApp() {
       <Utilits info={info} />
       <div className="wind-map">
         <Wind info={info} />
-        <Map info={info} />
+        <Suspense fallback={<div>Loading map...</div>}>
+          <Map info={info} />
+        </Suspense>
       </div>
     </div>
   );

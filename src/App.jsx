@@ -1,9 +1,14 @@
 import "./App.css";
-import WeatherApp from "./Components/WeatherApp/WeatherApp";
+import { lazy, Suspense } from "react";
+
+const WeatherApp = lazy(() => import("./Components/WeatherApp/WeatherApp"));
+
 function App() {
   return (
     <div>
-      <WeatherApp />
+      <Suspense fallback={<div>Loading...</div>}>
+        <WeatherApp />
+      </Suspense>
     </div>
   );
 }

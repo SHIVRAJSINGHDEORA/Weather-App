@@ -1,34 +1,28 @@
 import "../Utilities/Utilits.css";
-import { useRef, useEffect, useState } from "react";
-import mapboxgl from "mapbox-gl";
 
-import "mapbox-gl/dist/mapbox-gl.css";
+const ZOOM = 10;
+const WIDTH = 250;
+const HEIGHT = 250;
 
-const INITIAL_ZOOM = 10.12;
 export default function Map({ info }) {
-  const mapRef = useRef();
-  const mapContainerRef = useRef();
   const mapToken = import.meta.env.VITE_MAP_TOKEN;
-  let coordinates = [info.lon, info.lat];
-  console.log(coordinates);
 
-  useEffect(() => {
-    mapboxgl.accessToken = mapToken;
-    mapRef.current = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      center: coordinates,
-      zoom: INITIAL_ZOOM,
-    });
+  if (!info?.lon || !info?.lat) return null;
 
-    return () => {
-      mapRef.current.remove();
-    };
-  }, []);
+  const mapUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/` +
+    `${info.lon},${info.lat},${ZOOM}/` +
+    `${WIDTH}x${HEIGHT}` +
+    `?access_token=${mapToken}`;
 
-  useEffect(() => {
-    if (mapRef.current) {
-      mapRef.current.setCenter([info.lon, info.lat]);
-    }
-  }, [info.lon, info.lat]);
-  return <div className="map" id="map-container" ref={mapContainerRef} />;
+  return (
+    <div className="map">
+      <img
+        src={mapUrl}
+        alt="Location map"
+        className="map-image"
+        loading="lazy"
+      />
+    </div>
+  );
 }
+
