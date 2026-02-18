@@ -1,5 +1,4 @@
 import "../Utilities/Utilits.css";
-// import SimpleWindIndicator from "simple-wind-indicator";
 import { useWeather } from "../../../Context/WeatherContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -17,13 +16,7 @@ export default function Wind() {
         <p><b>Wind Direction :-</b> {info.WindDirection}&deg;</p>
         <p><b>Wind Speed :-</b> {info.WindSpeed} Km/hr</p>
       </div>
-      {/* <SimpleWindIndicator
-        direction={info?.WindDirection || 0}
-        speed={info?.WindSpeed || 0}
-        variant="detailed"
-        subtitle="Current"
-        preset="dark"
-      /> */}
+
     </div>
   );
 }
