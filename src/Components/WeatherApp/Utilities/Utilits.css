@@ -7,8 +7,8 @@
   background: #051351a0;
   height: 500px;
   border-radius: 28px;
-  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family:
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .humidity {
@@ -129,8 +129,13 @@
   background: #d9dffb;
   border-radius: 28px 28px 28px 28px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.wind-icon {
+  font-size: 50px;
 }
 
 .map {
@@ -148,7 +153,7 @@
 }
 
 .visibility-value {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .visibility-unit {

@@ -16,6 +16,7 @@ import {
   faSmog,
   faWater,
   faGaugeHigh,
+  faWind
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -30,16 +31,19 @@ library.add(
   faSnowflake,
   faSmog,
   faWater,
-  faGaugeHigh
+  faGaugeHigh,
+  faWind
 );
 
 import { useState } from "react";
 import weatherIcons from "../../../Utils/icon.js";
+import { useWeather } from "../../../Context/WeatherContext";
 
-export default function Weather({ getCity, info }) {
+export default function Weather() {
+  const { info } = useWeather();
   return (
     <div className="weather">
-      <SearchBox getCity={getCity} />
+      <SearchBox />
       <br />
       <div className="weather-card">
         <div className="location-header">

@@ -10,10 +10,21 @@ import {
   TravelExploreOutlined,
   Clear,
 } from "@mui/icons-material";
-import { useState } from "react";
-export default function SearchBox({ getCity }) {
+import { useEffect, useState } from "react";
+import { useWeather } from "../../../Context/WeatherContext";
+
+export default function SearchBox() {
+  const { getWeather } = useWeather();
   const [city, setCity] = useState("");
   const [clear, setClear] = useState(false);
+
+  useEffect(()=>{
+    let initial = async ()=>{
+      await getWeather("New Delhi");
+    }
+
+    initial();
+  },[]);
 
   let handdleCity = (event) => {
     setCity(event.target.value);
@@ -29,11 +40,22 @@ export default function SearchBox({ getCity }) {
     setClear(false);
   };
 
-  let handdleSubmit = async () => {
-    getCity(city);
+  let handdleSubmit = async (event) => {
+    event.preventDefault();
+    if(city.trim() === ""){
+      alert("Empty Feild ,Please Enter a valid City Name");
+      return;
+    }
+    await getWeather(city);
     setCity("");
     setClear(false);
   };
+
+  let handdleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      handdleSubmit(event);
+    }
+  }
 
   return (
     <div className="search-container">
@@ -59,6 +81,7 @@ export default function SearchBox({ getCity }) {
                   gap: 1,
                   justifyContent: "center",
                 }}
+                
               >
                 <IconButton onClick={clearTab} size="small">
                   <Clear sx={clear ? {} : { display: "none" }} />
@@ -73,7 +96,7 @@ export default function SearchBox({ getCity }) {
                     alignSelf: "center",
                   }}
                 />
-                <IconButton onClick={handdleSubmit}>
+                <IconButton  onClick={handdleSubmit}>
                   <TravelExploreOutlined sx={{ color: "blue" }} />
                 </IconButton>
               </InputAdornment>
@@ -101,6 +124,7 @@ export default function SearchBox({ getCity }) {
             placeholder="City Name"
             value={city}
             onChange={handdleCity}
+            onKeyDown={handdleKeyPress}
           />
         </FormControl>
       </form>

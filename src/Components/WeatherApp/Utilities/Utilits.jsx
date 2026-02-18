@@ -1,7 +1,10 @@
 import "./Utilits.css";
 import { formatLocalTime } from "../../../Utils/helper.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-export default function Utilits({ info }) {
+import { useWeather } from "../../../Context/WeatherContext";
+
+export default function Utilits() {
+  const { info } = useWeather();
   let sunrise = formatLocalTime(info.Sunrise, info.Timezone);
   if (sunrise == "Invalid Date") sunrise = "Sunrise";
   let sunset = formatLocalTime(info.Sunset, info.Timezone);
