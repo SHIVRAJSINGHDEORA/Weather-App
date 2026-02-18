@@ -19,11 +19,9 @@
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@mui/material": "^7.3.8",
     "@vitejs/plugin-react": "^4.2.1",
-    "mapbox-gl": "^3.17.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-is": "^19.2.4",
-    "simple-wind-indicator": "^1.0.4-a",
     "vite": "^7.3.1"
   },
   "devDependencies": {
